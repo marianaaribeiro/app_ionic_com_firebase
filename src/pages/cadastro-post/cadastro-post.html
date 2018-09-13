@@ -13,7 +13,7 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content id="container">
     <ion-content class="card-background-page">
         <ion-card>
           <img src="../../assets/imgs/5.jpg" id="img2"/>
@@ -23,7 +23,7 @@
                 <ion-label floating>Titulo do Post</ion-label>
                 <ion-input type="text"  formControlName="tituloPost" name="tituloPost"></ion-input>
               </ion-item>
-              <ion-item >
+              <ion-item (click)="itemTapped($event, item)">
                   <ion-label floating>Autor</ion-label>
                   <ion-input  type="text"  formControlName="autorPost" name="autorPost"></ion-input>
               </ion-item>

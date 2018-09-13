@@ -12,7 +12,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class CadastroProvider {
 
   private caminho = 'cadastrousuario/';
-  private caminho2 = 'cadastrousuario/cadastropost/';
+  private caminho2 = 'cadastropost/';
 
   constructor(public http: HttpClient,
               private db: AngularFireDatabase) {

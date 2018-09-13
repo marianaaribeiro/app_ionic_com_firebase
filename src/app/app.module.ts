@@ -17,6 +17,7 @@ import { CadastroProvider } from '../providers/cadastro/cadastro';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { CadastroPostPage } from '../pages/cadastro-post/cadastro-post';
 import { CadastroPostProvider } from '../providers/cadastro-post/cadastro-post';
+import { AutoresPage } from '../pages/autores/autores';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CadastroPostProvider } from '../providers/cadastro-post/cadastro-post';
     CadastroPage,
     PerfilPage,
     CadastroPostPage,
+    AutoresPage,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +55,7 @@ import { CadastroPostProvider } from '../providers/cadastro-post/cadastro-post';
     CadastroPage,
     PerfilPage,
     CadastroPostPage,
+    AutoresPage,
   ],
   providers: [
     StatusBar,

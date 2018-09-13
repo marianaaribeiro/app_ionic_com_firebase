@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import {  NavController, NavParams, ToastController } from 'ionic-angular';
+import {  NavController, NavParams, ToastController, LoadingController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 import { CadastroPostPage } from '../cadastro-post/cadastro-post';
 import { CadastroProvider } from '../../providers/cadastro/cadastro';
+import { AutoresPage } from '../autores/autores';
 
 @Component({
   selector: 'page-home',
@@ -14,33 +15,45 @@ export class HomePage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private provider: CadastroProvider,
-              public toast: ToastController) {
+              public toast: ToastController,
+              public loadingCtrl: LoadingController) {
     this.cadastroPost = this.provider.getTodosDadosPost();
-
+    this.presentLoading()
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
   }
 
 
-  novoPost(){
+
+  novoPost(){ 
     this.navCtrl.push(CadastroPostPage);
+  }
+  goautores(){
+    this.navCtrl.push(AutoresPage);
   }
 
   editarPost(dadosPost: any){
     this.navCtrl.push(CadastroPostPage, {dadosPost: dadosPost})
   }
+  presentLoading() {
+    const loader = this.loadingCtrl.create({
+      content: "Porfavor, aguarde um instate",
+      duration: 3000
+    });
+    loader.present();
+  }
 
   remover(dadosPost){
-    if(dadosPost.caminho2){
-      this.provider.removerPost(dadosPost.caminho2)
+      this.provider.removerPost(dadosPost.key)
         .then(() =>{
           this.toast.create({message: 'Post removido com sucesso', duration: 3000}).present();
+          this.presentLoading();
         })
         .catch(()=>{
           this.toast.create({message: 'Erro ao remover o Post', duration: 3000}).present();
         });
-    }
+    
   }
   }
 

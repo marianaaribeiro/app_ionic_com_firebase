@@ -2,7 +2,7 @@ page-cadastro {
     .card-background-page {
 
         ion-card {
-          position: relative;
+          position: fixed;
           text-align: center;
           height: 96%;
           border-top-left-radius: 20px;
@@ -53,6 +53,9 @@ page-cadastro {
             
         }
       
+      }
+      #containercadastro{
+        background-color: rgba(216, 124, 170, 0.384);
       }
 
 }

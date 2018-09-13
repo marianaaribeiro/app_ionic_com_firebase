@@ -1,0 +1,19 @@
+page-autores {
+    #containerautores{
+        background-color: rgba(216, 124, 170, 0.384);
+    }
+
+    ion-content{   
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #222;
+  overflow: hidden;
+  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/242759/cplogo.svg);
+  background-size: 10% 5%;
+  background-position: round;
+  position: relative;
+}
+
+}

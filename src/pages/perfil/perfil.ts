@@ -38,7 +38,7 @@ export class PerfilPage {
         .then(() =>{
           this.toast.create({message: 'Dados cadastrais removidos com sucesso', duration: 3000}).present();
         })
-        .catch(()=>{
+         .catch(()=>{
           this.toast.create({message: 'Erro ao remover os dados cadastrais', duration: 3000}).present();
         });
     }

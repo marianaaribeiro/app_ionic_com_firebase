@@ -5,19 +5,18 @@
   <ion-grid  style="height: 75%;" fixed >
     
       <img src="../../assets/imgs/7.jpg" id="img1" fixed />
-      <p class="card-title" fixed >Interativo</p>
+      <p class="card-title">Interativo</p>
     <ion-row id="cardLogin2" >
-      <ion-card id="cardLogin"> 
+      <ion-card class="cardLogin"> 
         <ion-card-header > 
             <ion-list>
-                <ion-item id="cardLogin" >
-                  <ion-label floating><b>Celular</b></ion-label>
-                  <ion-input type="number" id="inputLogin2"></ion-input>
+                <ion-item class="cardLogin" id="info" >
+                  <p>Qualquer pessoal pode usar o blog, mas cadaste os seus cados, quem sabe? Talvez o seu cadastro seja sorteado para ganhar um grande bonus surpresa. Quer saber o que é? Então não deixe de se cadastrar!</p>
                 </ion-item>
               
-                <ion-item id="cardLogin">
+                <ion-item class="cardLogin">
                   <button color="dark" ion-item id="btnLogin" (click)="efetuarLogin()">
-                    <ion-icon name="lock" item-start ></ion-icon>
+                    <ion-icon name="unlock" item-start ></ion-icon>
                       Entrar
                   </button>
                 </ion-item>              

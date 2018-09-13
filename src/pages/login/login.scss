@@ -1,8 +1,8 @@
 page-login {
-    #inputLogin2{
-        background-color: rgb(56, 46, 51);
-        opacity: 0.40;
+    #info{
+        text-align: justify;
         color: #fff;
+        
     }
     #ConteudoLogin1{
         text-align: center;
@@ -10,16 +10,17 @@ page-login {
         
     }
     #ConteudoLogin2{
-        color: #000;
+        color: #fff;
     }
-    #cardLogin{
-        background-color: rgb(117, 111, 113);
+    .cardLogin{
+        background-color: rgba(15, 14, 15, 0.705);
         color: #fff;
     }
     #cardLogin2{
-        opacity: 0.75;
-        margin: 5%;
-        align-items: center;        
+        
+        margin-top: 20%;
+        align-items: center; 
+        width: 40%;       
     }
     #btnLogin{
         margin-bottom: 25px;
@@ -29,7 +30,9 @@ page-login {
         margin-top: 5%;
         margin-left: 10px;
         margin-right: 10px;
-        border-radius: 10px
+        border-radius: 10px;
+        margin-bottom: 40px;
+        
     }
     .card-title {
         position: fixed;
@@ -50,6 +53,11 @@ page-login {
         color: #000;
         text-align: center;
         text-shadow: 2px -2px 10px #fff; 
+      }
+      ion-card{
+        position: fixed;
+        align-items: center; 
+        width: 40%;
       }
 
 

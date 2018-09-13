@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { HomePage } from '../home/home';
 import { CadastroProvider } from '../../providers/cadastro/cadastro';
+import { AutoresPage } from '../autores/autores';
 
 /**
  * Generated class for the CadastroPostPage page.
@@ -65,6 +66,12 @@ export class CadastroPostPage {
           console.error(e);
         });
     }
+  }
+  itemTapped(event, dadosPost) {
+    // That's right, we're pushing to ourselves!
+    this.navCtrl.push(AutoresPage, {
+      item: dadosPost
+    });
   }
 
 
