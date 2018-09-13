@@ -1,0 +1,40 @@
+<ion-content > 
+
+  <!--Iniciando conteúdo-->
+  <ion-content style="height: 90%; background-color: black">
+  <ion-grid  style="height: 75%;" fixed >
+    
+      <img src="../../assets/imgs/7.jpg" id="img1" fixed />
+      <p class="card-title" fixed >Interativo</p>
+    <ion-row id="cardLogin2" >
+      <ion-card id="cardLogin"> 
+        <ion-card-header > 
+            <ion-list>
+                <ion-item id="cardLogin" >
+                  <ion-label floating><b>Celular</b></ion-label>
+                  <ion-input type="number" id="inputLogin2"></ion-input>
+                </ion-item>
+              
+                <ion-item id="cardLogin">
+                  <button color="dark" ion-item id="btnLogin" (click)="efetuarLogin()">
+                    <ion-icon name="lock" item-start ></ion-icon>
+                      Entrar
+                  </button>
+                </ion-item>              
+              </ion-list>
+        </ion-card-header>
+        <ion-card-content id="ConteudoLogin1">
+          
+          <p id="ConteudoLogin2">Não é cadastrado?</p>
+          <p (click)="goPage1()" id="ConteudoLogin2"><b>Clique aqui, para fazer o cadastro!</b> </p>
+          
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+   
+  </ion-grid>
+  
+</ion-content>
+<p id="rodape" fixed>mariana.a.ribeiro1@gmail.com</p>
+</ion-content>
+

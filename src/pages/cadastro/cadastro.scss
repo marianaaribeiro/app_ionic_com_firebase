@@ -1,0 +1,58 @@
+page-cadastro {
+    .card-background-page {
+
+        ion-card {
+          position: relative;
+          text-align: center;
+          height: 96%;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+        }
+      
+        .card-title {
+          position: absolute;
+          top: 1%;
+          font-size: 3.0em;
+          width: 100%;
+          font-weight: bold;
+          color: #fff;
+          text-align: left;
+          text-shadow: 2px -2px 10px #000; 
+          margin-left: 10px;
+        }
+      
+        .card-subtitle {
+          font-size: 1.1em;
+          position: absolute;
+          top: 8%;
+          width: 100%;
+          color: #000;
+          text-align: center;
+          text-shadow: 2px -2px 10px rgb(247, 77, 25); 
+
+        }
+
+        #formularioC{
+            margin-top: 30px;
+            
+        }
+        #btnCadastro{
+            margin-top: 60px;
+            width: 300px;
+            border-radius: 20px;
+        }
+        #img2{
+            opacity: 0.80;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        ion-input{
+            border-bottom-color: black;
+            border-bottom: solid;
+            border-bottom-width: 0.3px;
+            
+        }
+      
+      }
+
+}

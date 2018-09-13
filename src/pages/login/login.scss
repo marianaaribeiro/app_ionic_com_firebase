@@ -1,0 +1,57 @@
+page-login {
+    #inputLogin2{
+        background-color: rgb(56, 46, 51);
+        opacity: 0.40;
+        color: #fff;
+    }
+    #ConteudoLogin1{
+        text-align: center;
+        margin-top: 2px;
+        
+    }
+    #ConteudoLogin2{
+        color: #000;
+    }
+    #cardLogin{
+        background-color: rgb(117, 111, 113);
+        color: #fff;
+    }
+    #cardLogin2{
+        opacity: 0.75;
+        margin: 5%;
+        align-items: center;        
+    }
+    #btnLogin{
+        margin-bottom: 25px;
+        margin-top: 20px;
+    }
+    #img1{
+        margin-top: 5%;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 10px
+    }
+    .card-title {
+        position: fixed;
+        top: 13%;
+        font-size: 4.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        text-shadow: 2px -2px 10px #000; 
+      }
+      #rodape{
+        position: absolute;
+        top: 92%;
+        font-size: 1.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #000;
+        text-align: center;
+        text-shadow: 2px -2px 10px #fff; 
+      }
+
+
+
+}

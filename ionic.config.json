@@ -1,0 +1,7 @@
+{
+  "name": "Interativo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

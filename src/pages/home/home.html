@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+    <ion-card *ngFor="let dadosPost of cadastroPost | async">
+        <ion-item id="card1">
+          <ion-avatar item-start>
+            <img src="../../assets/imgs/3.jpg">
+          </ion-avatar>
+          <h2>{{ dadosPost.tituloPost}}</h2>
+          <p>{{ dadosPost.autorPost }}</p>
+        </ion-item>
+        
+        <img src="../../assets/imgs/1.jpg">
+      
+        <ion-card-content>
+          <p> {{dadosPost.descricaoPost}}</p>
+        </ion-card-content>
+      
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-start clear small (click)="editarPost()">
+              <ion-icon name="create" color="dark"></ion-icon>
+              <div>Editar</div>
+            </button>
+          </ion-col>
+          <ion-col>
+              <button ion-button icon-start clear small (click)="remover()">
+                <ion-icon name="trash" color="danger"></ion-icon>
+                <div>Remover</div>
+              </button>
+            </ion-col>
+        </ion-row>
+      </ion-card>
+
+      <ion-fab top right edge>
+          <button ion-fab mini color="dark"><ion-icon name="add"></ion-icon></button>
+          <ion-fab-list>
+            <button ion-fab (click)="novoPost()"><ion-icon name="add"></ion-icon></button>
+            <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+          </ion-fab-list>
+        </ion-fab>
+</ion-content>

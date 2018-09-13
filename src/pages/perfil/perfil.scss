@@ -1,0 +1,42 @@
+page-perfil {
+    .card-background-page {
+
+        ion-card {
+          position: relative;
+          text-align: center;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+        }
+      
+        
+        .card-subtitle {
+          font-size: 1.4em;
+          position: absolute;
+          top: 10%;
+          width: 100%;
+          color: #fff;;
+          text-align: center;
+          text-shadow: 2px -2px 10px  #000; 
+
+        }
+        
+        #img2{
+            opacity: 0.80;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .infoCadastro{
+          color: #000;
+          border-bottom-color: rgba(134, 124, 124, 0.651);
+          border-bottom-width: 0.3px;
+          border-bottom-style: solid;
+          margin-top: 15px;
+          margin-bottom: 15px;
+          margin-left: 10px;
+          
+        }
+      
+      }
+
+
+}

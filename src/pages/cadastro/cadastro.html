@@ -1,0 +1,39 @@
+<ion-content>
+  <ion-content class="card-background-page">
+
+      <ion-card>
+        <img src="../../assets/imgs/5.jpg" id="img2"/>
+        <div class="card-title">Cadastro</div>
+        <div class="card-subtitle">Preencher todas as informações</div>
+
+        <form [formGroup]="todo" (ngSubmit)="logForm()" id="formularioC">
+            <ion-item>
+              <ion-label floating>Nome</ion-label>
+              <ion-input type="text"  formControlName="nomeUsuario" name="nomeUsuario"></ion-input>
+            </ion-item>
+            <ion-item >
+                <ion-label floating>Seu endereço atual</ion-label>
+                <ion-input  type="text"  formControlName="enderecoUsuarioAtual" name="enderecoUsuarioAtual"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Número do contato de emergência</ion-label>
+                <ion-input type="number"  formControlName="ContatoEmergencia" name= "ContatoEmergencia"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Seu e-mail</ion-label>
+                <ion-input type="text" formControlName="emailUsuario" name="emailUsuario"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Seu celular</ion-label>
+                <ion-input type="number" formControlName="celularUsuario" name="celularUsuario"></ion-input>
+            </ion-item>
+
+            
+            <button ion-button type="submit"  id="btnCadastro" [disabled]="!todo.valid" (click)="onSubmit()">Cadastrar</button>
+          </form>
+
+      </ion-card>
+    
+    </ion-content>
+
+</ion-content>

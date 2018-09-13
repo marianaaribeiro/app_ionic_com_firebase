@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Perfil</ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content>
+    <ion-content class="card-background-page">
+        
+        <ion-card>
+           
+          <img src="../../assets/imgs/5.jpg" id="img2"/>
+          <div class="card-subtitle">Aqui estão todas as suas informações</div>
+  
+          <ion-list>
+              <ion-item-sliding *ngFor="let dadosUsuario of cadastrousuario | async">
+                <ion-item >
+                  <h1 class="infoCadastro" text-center>{{ dadosUsuario.nomeUsuario }}</h1>
+                  <h3><b>Seu endereço atual:</b></h3> <p class="infoCadastro">{{ dadosUsuario.enderecoUsuarioAtual }}</p>
+                  <h3><b>Número do contato de emergência::</b></h3><p class="infoCadastro">{{ dadosUsuario.ContatoEmergencia }}</p>
+                  <h3><b>Seu e-mail:</b></h3><p class="infoCadastro">{{ dadosUsuario.emailUsuario }}</p>
+                  <h3><b>Seu celular:</b></h3><p class="infoCadastro">{{ dadosUsuario.celularUsuario }}</p>
+                </ion-item>
+                <ion-item >
+                    <ion-row>
+                        <ion-col>
+                          <button ion-button icon-start clear small (click)="editarUsuario(dadosUsuario)">
+                            <ion-icon name="create" color="dark"></ion-icon>
+                            <div>Editar</div>
+                          </button>
+                        </ion-col>
+                        <ion-col>
+                            <button ion-button icon-start clear small (click)="remover(dadosUsuario)">
+                              <ion-icon name="trash" color="danger"></ion-icon>
+                              <div>Remover</div>
+                            </button>
+                          </ion-col>
+                      </ion-row>
+
+                  
+                </ion-item>
+              </ion-item-sliding>
+          </ion-list>
+  
+        </ion-card>
+      
+      </ion-content>
+      <ion-fab bottom right>
+          <button ion-fab color="primary" (click)="novoUsuario()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-fab>
+      
+
+</ion-content>
