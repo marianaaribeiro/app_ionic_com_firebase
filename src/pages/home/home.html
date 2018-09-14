@@ -15,20 +15,16 @@
           </ion-avatar>
           <h2>{{ dadosPost.tituloPost}}</h2>
           <p>{{ dadosPost.autorPost }}</p>
-        </ion-item>
-        
-        <img [src]="base64Image" *ngIf="base64Image">
-        <img src="{{dadosPost.base64Image}}" *ngIf="base64Image"/>
-        {{dadosPost.base64Image}}
-      
+        </ion-item>    
         <ion-card-content>
+            <img src="{{imagemPost}}" *ngIf="imagemPost"/>
           <p> {{dadosPost.descricaoPost}}</p>
         </ion-card-content>
       
         <ion-row>
           <ion-col>
-            <button ion-button icon-start clear small (click)="editarPost(cadastroPost)">
-              <ion-icon name="create" color="dark"></ion-icon>
+            <button ion-button icon-start clear small (click)="editarPost(dadosPost)">
+              <ion-icon name="create" color="dark" ></ion-icon>
               <div>Editar</div>
             </button>
           </ion-col>

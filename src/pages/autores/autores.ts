@@ -25,9 +25,7 @@ export class AutoresPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AutoresPage');
   }
-  editarUsuario(dadosPost: any){
-    this.provider.pegarPost(dadosPost)
-    this.navCtrl.push(CadastroPostPage,{dadosPost: dadosPost});
+  editarUsuario(dadosPost: any){this.navCtrl.push(CadastroPostPage,{dadosPost: dadosPost});
   }
 
 

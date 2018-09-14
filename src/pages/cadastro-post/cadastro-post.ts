@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, ToastController, AlertController }
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { HomePage } from '../home/home';
 import { CadastroProvider } from '../../providers/cadastro/cadastro';
-import { AutoresPage } from '../autores/autores';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @IonicPage()
@@ -15,7 +14,7 @@ export class CadastroPostPage {
   todo : FormGroup;
   dadosPost: any;
   title:string;
-  base64Image: any;
+  imagemPost:string = '';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -47,7 +46,7 @@ export class CadastroPostPage {
       tituloPost: [this.dadosPost.tituloPost, Validators.required],
       autorPost: [this.dadosPost.autorPost, Validators.required],
       descricaoPost: [this.dadosPost.descricaoPost, Validators.required],
-      base64Image: [this.dadosPost.base64Image, Validators],
+      imagemPost: [this.dadosPost.imagemPost, Validators],
     }); 
   }
 
@@ -57,7 +56,9 @@ export class CadastroPostPage {
       this.provider.salvarDadosPost(this.todo.value) 
         .then(() =>{
           this.toast.create({message: 'Dados cadastrais salvos com sucesso', duration: 3000}).present();
-          this.navCtrl.setRoot(HomePage);
+          this.navCtrl.setRoot(HomePage, {
+            imagemPost: this.imagemPost
+          });
         })
         .catch((e)=>{
           this.toast.create({message: 'Erro ao salvar os dados cadastrais', duration: 3000}).present();
@@ -65,14 +66,10 @@ export class CadastroPostPage {
         });
     }
   }
-  itemTapped(event, dadosPost) {
-    // That's right, we're pushing to ourselves!
-    this.navCtrl.push(AutoresPage, {
-      item: dadosPost
-    });
-  }
 
   gocamera(type){
+    this.imagemPost = '';
+
     const options: CameraOptions = {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
@@ -82,16 +79,20 @@ export class CadastroPostPage {
       sourceType: type == "picture" ?
       this.camera.PictureSourceType.CAMERA : this.camera.PictureSourceType.SAVEDPHOTOALBUM,
       correctOrientation: true,
+      allowEdit: true,
+      targetHeight: 100,
+      targetWidth: 100,
 
     }
     
     this.camera.getPicture(options).then((imageData) => {
-     // imageData is either a base64 encoded string or a file URI
-     // If it's base64 (DATA_URL):
-     this.base64Image = 'data:image/jpeg;base64,' + imageData;
+       let base64Image = 'data:image/jpeg;base64,' + imageData;
+       this.imagemPost = base64Image;
     }, (err) => {
-     // Handle error
      this.displayErrorAlert(err);
+    })
+    .catch((err) => {
+      console.error(err);
     });
   }
   displayErrorAlert(err){

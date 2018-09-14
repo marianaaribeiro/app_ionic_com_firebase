@@ -11,6 +11,7 @@ import { AutoresPage } from '../autores/autores';
 })
 export class HomePage {
   cadastroPost: Observable<any>;
+  imagemPost ='';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -18,6 +19,7 @@ export class HomePage {
               public toast: ToastController,
               public loadingCtrl: LoadingController) {
     this.cadastroPost = this.provider.getTodosDadosPost();
+    this.imagemPost = this.navParams.get('imagemPost');
     this.presentLoading()
   }
   ionViewDidLoad() {
@@ -36,6 +38,7 @@ export class HomePage {
   editarPost(dadosPost: any){
     this.navCtrl.push(CadastroPostPage, {dadosPost: dadosPost})
   }
+
   presentLoading() {
     const loader = this.loadingCtrl.create({
       content: "Por favor, aguarde",
@@ -43,6 +46,7 @@ export class HomePage {
     });
     loader.present();
   }
+
 
   
   }

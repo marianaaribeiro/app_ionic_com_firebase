@@ -32,6 +32,6 @@ export class PerfilPage {
     this.navCtrl.push(CadastroPage, {dadosUsuario: dadosUsuario})
   }
 
-  
+  }
 
-}
+

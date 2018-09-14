@@ -76,19 +76,19 @@ export class CadastroProvider {
     return new Promise((resolve, reject) => {
       if(dadosPost.Key){
         this.db.list(this.caminho2)
-          .update(dadosPost.Key, {tituloPost: dadosPost.tituloPost, autorPost: dadosPost.autorPost, descricaoPost: dadosPost.descricaoPost, base64Image: dadosPost.base64Image})
+          .update(dadosPost.Key, {tituloPost: dadosPost.tituloPost, autorPost: dadosPost.autorPost, descricaoPost: dadosPost.descricaoPost, imagemPost: dadosPost.imagemPost})
           .then(() => resolve())
           .catch(() => reject());
       }else{
         this.db.list(this.caminho2)
-        .push({tituloPost: dadosPost.tituloPost, autorPost: dadosPost.autorPost, descricaoPost: dadosPost.descricaoPost, base64Image: dadosPost.base64Image})
+        .push({tituloPost: dadosPost.tituloPost, autorPost: dadosPost.autorPost, descricaoPost: dadosPost.descricaoPost, imagemPost: dadosPost.imagemPost})
         .then(() => resolve());
       }
     })
   }
 
   removerPost(Key:string){
-    return this.db.list(this.caminho).remove(Key);
+    return this.db.list(this.caminho2).remove(Key);
   }
 
 }
