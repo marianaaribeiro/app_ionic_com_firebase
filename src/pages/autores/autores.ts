@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 import { CadastroProvider } from '../../providers/cadastro/cadastro';
 import { CadastroPostPage } from '../cadastro-post/cadastro-post';
@@ -26,6 +26,7 @@ export class AutoresPage {
     console.log('ionViewDidLoad AutoresPage');
   }
   editarUsuario(dadosPost: any){
+    this.provider.pegarPost(dadosPost)
     this.navCtrl.push(CadastroPostPage,{dadosPost: dadosPost});
   }
 

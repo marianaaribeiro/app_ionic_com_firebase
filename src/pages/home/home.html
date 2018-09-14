@@ -1,5 +1,5 @@
 <ion-header >
-  <ion-navbar>
+  <ion-navbar color="dark">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -17,7 +17,9 @@
           <p>{{ dadosPost.autorPost }}</p>
         </ion-item>
         
-        <img src="../../assets/imgs/1.jpg">
+        <img [src]="base64Image" *ngIf="base64Image">
+        <img src="{{dadosPost.base64Image}}" *ngIf="base64Image"/>
+        {{dadosPost.base64Image}}
       
         <ion-card-content>
           <p> {{dadosPost.descricaoPost}}</p>
@@ -25,25 +27,19 @@
       
         <ion-row>
           <ion-col>
-            <button ion-button icon-start clear small (click)="editarPost(dadosPost)">
+            <button ion-button icon-start clear small (click)="editarPost(cadastroPost)">
               <ion-icon name="create" color="dark"></ion-icon>
               <div>Editar</div>
             </button>
           </ion-col>
-          <ion-col>
-              <button ion-button icon-start clear small (click)="remover(dadosPost)">
-                <ion-icon name="trash" color="danger"></ion-icon>
-                <div>Remover</div>
-              </button>
-            </ion-col>
         </ion-row>
       </ion-card>
 
       <ion-fab top right edge>
-          <button ion-fab mini color="dark"><ion-icon name="add"></ion-icon></button>
+          <button ion-fab mini color="light"><ion-icon name="add"></ion-icon></button>
           <ion-fab-list>
-            <button ion-fab (click)="novoPost()"><ion-icon name="add"></ion-icon></button>
-            <button ion-fab (click)="goautores()"><ion-icon name="paper"></ion-icon></button>
+            <button ion-fab color="dark" (click)="novoPost()"><ion-icon name="add"></ion-icon></button>
+            <button ion-fab color="dark" (click)="goautores()"><ion-icon name="paper"></ion-icon></button>
           </ion-fab-list>
         </ion-fab>
 </ion-content>

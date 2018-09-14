@@ -5,7 +5,6 @@ import { HomePage } from '../home/home';
 import { CadastroProvider } from '../../providers/cadastro/cadastro';
 import { AutoresPage } from '../autores/autores';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @IonicPage()
 @Component({
@@ -24,8 +23,7 @@ export class CadastroPostPage {
               private provider: CadastroProvider,
               private toast: ToastController,
               private camera: Camera,
-              public alertCtrl: AlertController,
-              private domSanitizer: DomSanitizer,) {
+              public alertCtrl: AlertController,) {
                 this.dadosPost = this.navParams.data.dadosPost || {};
                 this.createFormPost();
                 this.setupPageTitlePost();

@@ -44,17 +44,7 @@ export class HomePage {
     loader.present();
   }
 
-  remover(dadosPost){
-      this.provider.removerPost(dadosPost.key)
-        .then(() =>{
-          this.toast.create({message: 'Post removido com sucesso', duration: 3000}).present();
-          this.presentLoading();
-        })
-        .catch(()=>{
-          this.toast.create({message: 'Erro ao remover o Post', duration: 3000}).present();
-        });
-    
-  }
+  
   }
 
 

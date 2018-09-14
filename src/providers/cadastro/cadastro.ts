@@ -40,12 +40,12 @@ export class CadastroProvider {
     return new Promise((resolve, reject) => {
       if(dadosUsuario.key){
         this.db.list(this.caminho)
-          .update(dadosUsuario.key, {nomeUsuario: dadosUsuario.nomeUsuario, enderecoUsuarioAtual: dadosUsuario.enderecoUsuarioAtual, ContatoEmergencia: dadosUsuario.ContatoEmergencia, emailUsuario: dadosUsuario.emailUsuario, celularUsuario: dadosUsuario.celularUsuario, base64Image: dadosUsuario.base64Image})
+          .update(dadosUsuario.key, {nomeUsuario: dadosUsuario.nomeUsuario, enderecoUsuarioAtual: dadosUsuario.enderecoUsuarioAtual, ContatoEmergencia: dadosUsuario.ContatoEmergencia, emailUsuario: dadosUsuario.emailUsuario, celularUsuario: dadosUsuario.celularUsuario,})
           .then(() => resolve())
           .catch(() => reject());
       }else{
         this.db.list(this.caminho)
-        .push({nomeUsuario: dadosUsuario.nomeUsuario, enderecoUsuarioAtual: dadosUsuario.enderecoUsuarioAtual, ContatoEmergencia: dadosUsuario.ContatoEmergencia, emailUsuario: dadosUsuario.emailUsuario, celularUsuario: dadosUsuario.celularUsuario, base64Image: dadosUsuario.base64Image})
+        .push({nomeUsuario: dadosUsuario.nomeUsuario, enderecoUsuarioAtual: dadosUsuario.enderecoUsuarioAtual, ContatoEmergencia: dadosUsuario.ContatoEmergencia, emailUsuario: dadosUsuario.emailUsuario, celularUsuario: dadosUsuario.celularUsuario, })
         .then(() => resolve());
       }
     })
@@ -74,14 +74,14 @@ export class CadastroProvider {
 
   salvarDadosPost(dadosPost: any){
     return new Promise((resolve, reject) => {
-      if(dadosPost.key){
+      if(dadosPost.Key){
         this.db.list(this.caminho2)
-          .update(dadosPost.key, {tituloPost: dadosPost.tituloPost, autorPost: dadosPost.autorPost, descricaoPost: dadosPost.descricaoPost,})
+          .update(dadosPost.Key, {tituloPost: dadosPost.tituloPost, autorPost: dadosPost.autorPost, descricaoPost: dadosPost.descricaoPost, base64Image: dadosPost.base64Image})
           .then(() => resolve())
           .catch(() => reject());
       }else{
         this.db.list(this.caminho2)
-        .push({tituloPost: dadosPost.tituloPost, autorPost: dadosPost.autorPost, descricaoPost: dadosPost.descricaoPost,})
+        .push({tituloPost: dadosPost.tituloPost, autorPost: dadosPost.autorPost, descricaoPost: dadosPost.descricaoPost, base64Image: dadosPost.base64Image})
         .then(() => resolve());
       }
     })

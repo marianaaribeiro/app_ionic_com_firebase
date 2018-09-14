@@ -32,16 +32,6 @@ export class PerfilPage {
     this.navCtrl.push(CadastroPage, {dadosUsuario: dadosUsuario})
   }
 
-  remover(dadosUsuario){
-    if(dadosUsuario.key){
-      this.provider.remover(dadosUsuario.key)
-        .then(() =>{
-          this.toast.create({message: 'Dados cadastrais removidos com sucesso', duration: 3000}).present();
-        })
-         .catch(()=>{
-          this.toast.create({message: 'Erro ao remover os dados cadastrais', duration: 3000}).present();
-        });
-    }
-  }
+  
 
 }

@@ -11,14 +11,8 @@
         <ion-card-header > 
             <ion-list>
                 <h1 id="g" *ngFor="let dadosUsuario of cadastrousuario | async">{{dadosUsuario.nomeUsuario}}</h1>
-                  
-                <ion-item class="cardLogin" id="info" >
-                 
-                  
-                </ion-item>
-              
                 <ion-item class="cardLogin">
-                  <button color="secundy" ion-item id="btnLogin" [disabled]="!cadastrousuario" (click)="efetuarLogin(cadastrousuario)">
+                  <button color="secundy" ion-item id="btnLogin"  (click)="efetuarLogin()">
                     <ion-icon name="unlock" item-start ></ion-icon>
                       Entrar
                   </button>

@@ -7,11 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { Camera } from '@ionic-native/camera';
 
 import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { SplashScreen } from '@ionic-native/splash-screen'; 
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
 import { CadastroPage } from '../pages/cadastro/cadastro';
 import { CadastroProvider } from '../providers/cadastro/cadastro';
@@ -24,7 +23,6 @@ import { AutoresPage } from '../pages/autores/autores';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
     LoginPage,
     CadastroPage,
     PerfilPage,
@@ -51,7 +49,6 @@ import { AutoresPage } from '../pages/autores/autores';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
     LoginPage,
     CadastroPage,
     PerfilPage,
