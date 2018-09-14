@@ -38,7 +38,7 @@ export class HomePage {
   }
   presentLoading() {
     const loader = this.loadingCtrl.create({
-      content: "Porfavor, aguarde um instate",
+      content: "Por favor, aguarde",
       duration: 3000
     });
     loader.present();

@@ -22,7 +22,7 @@
               <ion-item>
                 <ion-label floating>Titulo do Post</ion-label>
                 <ion-input type="text"  formControlName="tituloPost" name="tituloPost"></ion-input>
-              </ion-item>
+              </ion-item> 
               <ion-item (click)="itemTapped($event, item)">
                   <ion-label floating>Autor</ion-label>
                   <ion-input  type="text"  formControlName="autorPost" name="autorPost"></ion-input>
@@ -31,7 +31,22 @@
                   <ion-label floating>Descrição do Post</ion-label>
                   <ion-textarea type="text" formControlName="descricaoPost" name= "descricaoPost"></ion-textarea>
               </ion-item>
+                <ion-col>
+                  <button ion-button clear small color="primary" icon-left (click)="gocamera('picture')">
+                    <ion-icon name='camera'></ion-icon>
+                    Câmera
+                  </button>
+                </ion-col>
+                <ion-col text-center>
+                  <button ion-button clear small color="primary" icon-left (click)="gocamera('gallery')">
+                    <ion-icon name='albums'></ion-icon>
+                    Galeria
+                  </button>
+                </ion-col>
+              <img *ngIf="base64Image" [src]="domSanitizer.bypassSecurityTrustUrl(base64Image)" />
+              
               <button ion-button type="submit"  id="btnCadastro" [disabled]="!todo.valid" (click)="onSubmitPost()">Cadastrar</button>
+              
             </form>
   
         </ion-card>

@@ -10,12 +10,15 @@
       <ion-card class="cardLogin"> 
         <ion-card-header > 
             <ion-list>
+                <h1 id="g" *ngFor="let dadosUsuario of cadastrousuario | async">{{dadosUsuario.nomeUsuario}}</h1>
+                  
                 <ion-item class="cardLogin" id="info" >
-                  <p>Qualquer pessoal pode usar o blog, mas cadaste os seus cados, quem sabe? Talvez o seu cadastro seja sorteado para ganhar um grande bonus surpresa. Quer saber o que é? Então não deixe de se cadastrar!</p>
+                 
+                  
                 </ion-item>
               
                 <ion-item class="cardLogin">
-                  <button color="dark" ion-item id="btnLogin" (click)="efetuarLogin()">
+                  <button color="secundy" ion-item id="btnLogin" [disabled]="!cadastrousuario" (click)="efetuarLogin(cadastrousuario)">
                     <ion-icon name="unlock" item-start ></ion-icon>
                       Entrar
                   </button>

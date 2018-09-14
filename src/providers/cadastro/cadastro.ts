@@ -40,12 +40,12 @@ export class CadastroProvider {
     return new Promise((resolve, reject) => {
       if(dadosUsuario.key){
         this.db.list(this.caminho)
-          .update(dadosUsuario.key, {nomeUsuario: dadosUsuario.nomeUsuario, enderecoUsuarioAtual: dadosUsuario.enderecoUsuarioAtual, ContatoEmergencia: dadosUsuario.ContatoEmergencia, emailUsuario: dadosUsuario.emailUsuario, celularUsuario: dadosUsuario.celularUsuario})
+          .update(dadosUsuario.key, {nomeUsuario: dadosUsuario.nomeUsuario, enderecoUsuarioAtual: dadosUsuario.enderecoUsuarioAtual, ContatoEmergencia: dadosUsuario.ContatoEmergencia, emailUsuario: dadosUsuario.emailUsuario, celularUsuario: dadosUsuario.celularUsuario, base64Image: dadosUsuario.base64Image})
           .then(() => resolve())
           .catch(() => reject());
       }else{
         this.db.list(this.caminho)
-        .push({nomeUsuario: dadosUsuario.nomeUsuario, enderecoUsuarioAtual: dadosUsuario.enderecoUsuarioAtual, ContatoEmergencia: dadosUsuario.ContatoEmergencia, emailUsuario: dadosUsuario.emailUsuario, celularUsuario: dadosUsuario.celularUsuario})
+        .push({nomeUsuario: dadosUsuario.nomeUsuario, enderecoUsuarioAtual: dadosUsuario.enderecoUsuarioAtual, ContatoEmergencia: dadosUsuario.ContatoEmergencia, emailUsuario: dadosUsuario.emailUsuario, celularUsuario: dadosUsuario.celularUsuario, base64Image: dadosUsuario.base64Image})
         .then(() => resolve());
       }
     })

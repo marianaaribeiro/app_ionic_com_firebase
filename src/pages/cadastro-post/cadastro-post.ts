@@ -1,16 +1,11 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController, AlertController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { HomePage } from '../home/home';
 import { CadastroProvider } from '../../providers/cadastro/cadastro';
 import { AutoresPage } from '../autores/autores';
-
-/**
- * Generated class for the CadastroPostPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @IonicPage()
 @Component({
@@ -21,12 +16,16 @@ export class CadastroPostPage {
   todo : FormGroup;
   dadosPost: any;
   title:string;
+  base64Image: any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private formBuilder: FormBuilder,
               private provider: CadastroProvider,
-              private toast: ToastController,) {
+              private toast: ToastController,
+              private camera: Camera,
+              public alertCtrl: AlertController,
+              private domSanitizer: DomSanitizer,) {
                 this.dadosPost = this.navParams.data.dadosPost || {};
                 this.createFormPost();
                 this.setupPageTitlePost();
@@ -50,6 +49,7 @@ export class CadastroPostPage {
       tituloPost: [this.dadosPost.tituloPost, Validators.required],
       autorPost: [this.dadosPost.autorPost, Validators.required],
       descricaoPost: [this.dadosPost.descricaoPost, Validators.required],
+      base64Image: [this.dadosPost.base64Image, Validators],
     }); 
   }
 
@@ -72,6 +72,38 @@ export class CadastroPostPage {
     this.navCtrl.push(AutoresPage, {
       item: dadosPost
     });
+  }
+
+  gocamera(type){
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      saveToPhotoAlbum: true,
+      mediaType: this.camera.MediaType.PICTURE,
+      sourceType: type == "picture" ?
+      this.camera.PictureSourceType.CAMERA : this.camera.PictureSourceType.SAVEDPHOTOALBUM,
+      correctOrientation: true,
+
+    }
+    
+    this.camera.getPicture(options).then((imageData) => {
+     // imageData is either a base64 encoded string or a file URI
+     // If it's base64 (DATA_URL):
+     this.base64Image = 'data:image/jpeg;base64,' + imageData;
+    }, (err) => {
+     // Handle error
+     this.displayErrorAlert(err);
+    });
+  }
+  displayErrorAlert(err){
+    console.log(err);
+    let alert = this.alertCtrl.create({
+       title: 'Error',
+       subTitle: 'Error while trying to capture picture',
+       buttons: ['OK']
+     });
+     alert.present();
   }
 
 

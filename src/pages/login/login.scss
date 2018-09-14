@@ -2,7 +2,6 @@ page-login {
     #info{
         text-align: justify;
         color: #fff;
-        
     }
     #ConteudoLogin1{
         text-align: center;
@@ -15,6 +14,7 @@ page-login {
     .cardLogin{
         background-color: rgba(15, 14, 15, 0.705);
         color: #fff;
+        text-align: center;
     }
     #cardLogin2{
         
@@ -31,7 +31,7 @@ page-login {
         margin-left: 10px;
         margin-right: 10px;
         border-radius: 10px;
-        margin-bottom: 40px;
+        margin-bottom: 25px;
         
     }
     .card-title {
@@ -58,8 +58,14 @@ page-login {
         position: fixed;
         align-items: center; 
         width: 40%;
+        
       }
-
+      #g{
+          width: 20px;
+          color: #fff;
+          text-align: center;
+          margin-right: 20px;
+      }
 
 
 }
